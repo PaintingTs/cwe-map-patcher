@@ -1,0 +1,6 @@
+﻿				<CreaturesUpgradesFilter>
+					<ForbiddenBasicUpgradeTiers/>
+					<ForbiddenAlterUpgradeTiers/>
+					<NotUpgradeable/>
+					<ForbiddenUpgrades/>
+				</CreaturesUpgradesFilter>
