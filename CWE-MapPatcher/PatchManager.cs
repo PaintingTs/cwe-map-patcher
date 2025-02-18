@@ -18,10 +18,6 @@ namespace CWE_MapPatcher
             _at = new Utils.ArchiveTool();
 
             _unzippedDir = _at.UnPack(filePath);
-
-            if (_unzippedDir == null)
-                return false;
-
             _filePath = filePath;
 
             if (Clans.AlreadyPatched(_unzippedDir))
@@ -52,7 +48,9 @@ namespace CWE_MapPatcher
 
             CheckMapScriptFiles(xdbFileInfo.DirectoryName);
 
-            CopyResources(_unzippedDir);
+            // CopyMapObjects(_unzippedDir); // Not used in 2.0 for now. Also it is a bad practice to add global mods as map mods!
+
+            MakeUniqueFolderName(xdbFileInfo.Directory);
 
             var fileInfo = new FileInfo(_filePath);
             _at.Pack(Path.Combine(fileInfo.DirectoryName, "CWE_" + fileInfo.Name));
@@ -61,7 +59,7 @@ namespace CWE_MapPatcher
         }
 
 
-        private static void CopyResources(string rootDirectory)
+        private static void CopyMapObjects(string rootDirectory)
         {
             string mapObjectsDir = Path.Combine(rootDirectory, "MapObjects");
 
@@ -86,6 +84,18 @@ namespace CWE_MapPatcher
 
             if (!File.Exists(luaScriptFilePath))
                 File.Copy(@".\resources\MapScript\MapScript.lua", luaScriptFilePath);
+        }
+
+        private static void MakeUniqueFolderName(DirectoryInfo orignalDir)
+        {
+            // TODO:
+            // non-RMG maps use actual map name as a folder name (instead of GUIDs)
+            // check if this code will work fine for non-RMG maps
+
+            string uniqueFolderName = Guid.NewGuid().ToString().ToUpper();
+            string destDir = Path.Combine(orignalDir.Parent.FullName, uniqueFolderName);
+
+            Directory.Move(orignalDir.FullName, destDir);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace CWE_MapPatcher
 
                 if (!patcher.Prepare(tbxMapPath.Text))
                 {
-                    MessageBox.Show("This map already CWE-patched. Use original map instead");
+                    MessageBox.Show("This map already CWE-patched. Use original, not patched map instead");
                     return;
                 }
 
