@@ -137,6 +137,8 @@ namespace CWE_MapPatcher
 
                 playerObjectiveNode.InnerXml += Properties.Resources.TownRebuildObjective;
 
+                playerObjectiveNode.InnerXml += Properties.Resources.SpecialPathsObjective;
+
                 playerId++;
             }
         }

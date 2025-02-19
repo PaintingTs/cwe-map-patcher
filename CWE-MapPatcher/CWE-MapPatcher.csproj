@@ -95,6 +95,7 @@
     <Compile Include="Utils\FileAttributesTool.cs" />
     <Compile Include="XdbPatcher.cs" />
     <Content Include="resources\red-knights-list.xml" />
+    <Content Include="resources\special-paths-objective.xml" />
     <Content Include="resources\town-rebuild-objective.xml" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

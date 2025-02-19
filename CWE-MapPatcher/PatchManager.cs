@@ -91,6 +91,7 @@ namespace CWE_MapPatcher
             // TODO:
             // non-RMG maps use actual map name as a folder name (instead of GUIDs)
             // check if this code will work fine for non-RMG maps
+            // Alternative solution: to use h5m filename as a directory name - this will ensure uniqueness
 
             string uniqueFolderName = Guid.NewGuid().ToString().ToUpper();
             string destDir = Path.Combine(orignalDir.Parent.FullName, uniqueFolderName);

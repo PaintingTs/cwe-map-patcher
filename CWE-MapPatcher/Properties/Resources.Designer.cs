@@ -182,6 +182,28 @@ namespace CWE_MapPatcher.Properties {
         ///   Looks up a localized string similar to 
         ///						&lt;Item&gt;
         ///							&lt;Name/&gt;
+        ///							&lt;CaptionFileRef href=&quot;/txt/special-paths-objective-cap.txt&quot;/&gt;
+        ///							&lt;ObscureCaptionFileRef href=&quot;/txt/special-paths-objective-cap2&quot;/&gt;
+        ///							&lt;DescriptionFileRef href=&quot;/txt/special-paths-objective-desc.txt&quot;/&gt;
+        ///							&lt;ProgressCommentsFileRef/&gt;
+        ///							&lt;Kind&gt;OBJECTIVE_KIND_SCENARIO_INFO&lt;/Kind&gt;
+        ///							&lt;Parameters/&gt;
+        ///							&lt;Timeout&gt;-1&lt;/Timeout&gt;
+        ///							&lt;Holdout&gt;-1&lt;/Holdout&gt;
+        ///							&lt;CheckDelay&gt;-1&lt;/CheckDelay&gt;
+        ///							&lt;Dependencies/&gt;
+        ///							&lt;InstantVictory&gt;false&lt;/Inst [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SpecialPathsObjective {
+            get {
+                return ResourceManager.GetString("SpecialPathsObjective", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///						&lt;Item&gt;
+        ///							&lt;Name/&gt;
         ///							&lt;CaptionFileRef href=&quot;/txt/rebuild-objective-cap.txt&quot;/&gt;
         ///							&lt;ObscureCaptionFileRef href=&quot;/txt/rebuild-objective-cap2&quot;/&gt;
         ///							&lt;DescriptionFileRef href=&quot;/txt/rebuild-objective-desc.txt&quot;/&gt;
